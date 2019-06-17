@@ -1,0 +1,31 @@
+.card {
+
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-img {
+    max-width: auto;
+    height: 165px;
+}
+
+.card-title {
+    font-size: .9rem;
+    margin: 0px 0px 6px;
+}
+
+.card-text {
+    font-size: .7rem;
+    margin: 0px 0px 0px;
+}
+
+.card-subtitle {
+    font-size: .7rem;
+}
+
+.center-the-grid {
+    display: flex;
+    justify-content: center;
+}
