@@ -27,6 +27,7 @@ import {
     CardTitle,
     CardText,
     CardSubtitle,
+    Label,
 } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
@@ -39,6 +40,7 @@ class SortableComponent extends Component {
         this.state = {
             // items: ["A", "B", "C", "D","E", "F", "G", "H","I", "J", "K", "L"]
             items: [], // DATA IS INSTANTIATED
+            // exportData: [],
             isOpen: false,
             isVisible: false,
         }
@@ -77,6 +79,34 @@ class SortableComponent extends Component {
         this.toggleVisible()
     }
 
+    // unparse = () => {
+    //   // const thing = this.state.items    
+    //   // const csv = thing.filter((item => (
+    //   //   item.config_sku
+    //   // )))   // undefined
+    //   // const csv = this.state.items.config_sku   // undefined
+    //   // const items = this.state.items // renders all of it
+    //   // csv = Papa.parse(csv)
+    //   // const csv = this.setState({items: this.state.items.map(item => item.config_sku)})   // undefined     
+    //   // // const csv = this.state.items.map(item => item.config_sku)
+    //   // // const csv = Papa.unparse(this.state.items) 
+    //   // // const csv = Papa.unparse(this.state.items) 
+    //   // const items = this.state.items
+    //   // console.log(typeof(items))     
+    //   // const csv = Papa.parse(this.state.items.filter(item => item.config_sku))
+    //   // const csv = Papa.parse(this.state.items.map(item => item.config_sku))
+      
+    //   let csv = this.state.items.map((item) =>
+    //     ( item.config_sku )
+    //   )   // [undefined      
+    //   console.log(typeof(csv))
+    //   console.log(csv)
+    //   var file = new File([
+    //     csv
+    //   ], "neworder.csv", {type: "text/plain;charset=utf-8"});
+    //   FileSaver.saveAs(file);
+    // }   
+
     unparse = (event) => {
       const csv = Papa.unparse(this.state.items) 
       var file = new File([
@@ -106,6 +136,10 @@ exportButton = () => (
       <Button onClick={this.unparse} color="secondary" size="sm">Save New Order</Button>        
   </div>
 )
+
+// newindex = (e) => {
+//   index = e
+// }
 
   render() {
     return (
@@ -154,8 +188,13 @@ exportButton = () => (
   }
 }
 
+// let something = [];
+
 // THIS IS THE INDIVIDUAL ITEM OBJECT
 const SortableItem = SortableElement(({ value, index }) => ( // value is being populated by SortableList map function
+    
+
+    
     <Card
       style={{
         width: 200,
@@ -169,19 +208,48 @@ const SortableItem = SortableElement(({ value, index }) => ( // value is being p
         fontSize: 24
       }}
     >
-        {/* <div> */}
             <CardTitle> {value.name} </CardTitle>
             <CardSubtitle> {value.config_sku} </CardSubtitle>
             <CardImg src={value.image}></CardImg>
             <CardText> {value.designer} </CardText>
             <CardText> {index} </CardText>
-            {/* {value} */}            
-        {/* </div> */}
+            
+            
 
-        {/* {value}
-        {index} */}
+
+
+
+
+
+
+            
+
+            {/* {value} */}            
+
+            {/* {value}
+            {index} */}
+
+           
+            {/* { something = {index} }
+            {console.log(something)} */}
+
       
-            {console.log({value})}
+            {/* {console.log({value})} */}
+            {/* {console.log(value.config_sku, index)} */}
+
+
+            {/* { this.setState({exportData:value.config_sku, index}) }
+            { console.log(this.state.exportData) } */}
+
+            {/* { setState = value.config_sku }
+            {console.log(this.egg)} */}
+
+
+
+            {/* {this.setState(({ exportData }) => ({
+              exportData: [value.config_sku, index]
+            }))} */}
+            {/* {console.log(this.exportData)} */}
     </Card>
   ));
   
@@ -191,7 +259,7 @@ const SortableItem = SortableElement(({ value, index }) => ( // value is being p
         <div 
                 style={{
                 // backgroundColor: "lime",
-                width: 800,
+                // width: 800, // by removing this, children cards will fill container to 5,4,3 across depending on window width
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "center",
@@ -199,10 +267,33 @@ const SortableItem = SortableElement(({ value, index }) => ( // value is being p
                 }}
             >
                 {items.map((value, index) => (
-                <SortableItem key={`item-${index}`} index={index} value={value} />
+                
+                <SortableItem key={`item-${index}`} index={index} value={value}> 
+                  
+                </SortableItem>
                 ))}
             </div>
       </section>
+
+    //    <section className="center-the-grid"
+    //            style={{
+    //            // backgroundColor: "lime",
+    //            width: 800,
+    //            display: "flex",
+    //            flexWrap: "wrap",
+    //            justifyContent: "center",
+    //            // textAlign: "left"
+    //            }}
+    //        >
+    //            {items.map((value, index) => (
+               
+    //            <SortableItem key={`item-${index}`} index={index} value={value}> 
+                 
+    //            </SortableItem>
+    //            ))}
+           
+    //  </section>
+
             
     );
   });

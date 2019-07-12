@@ -28,4 +28,6 @@
 .center-the-grid {
     display: flex;
     justify-content: center;
+    width: inherit;
+    // padding-left: 122px;
 }
