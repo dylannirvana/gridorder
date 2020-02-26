@@ -123,8 +123,8 @@ class SortableComponent extends Component {
 
   importButton = () => (
     <div className="import">
-        <h4> GO App </h4> 
-        <p className="summary" >Welcome to the Grid Order Application. Please upload a properly formatted Custom Export from Magento. And reorder the tiles in the UI.</p>                    
+        <h4> Product selection application </h4> 
+        <p className="summary" >This is a Magento plugin. Please upload a properly formatted Custom Export from Magento. And reorder the tiles in the UI.</p>                    
         <Input type="file" onChange={this.parse}  />
     </div>
 )
@@ -132,8 +132,8 @@ class SortableComponent extends Component {
 exportButton = () => (
   <div className="exportButton">
       <h4> Export CSV </h4>
-      <p className="summary" >Now that you have the New Order, export the file. And upload it into the Magento Custom Module. This will change the grid order.</p>
-      <Button onClick={this.unparse} color="secondary" size="sm">Save New Order</Button>        
+      <p className="summary" >Now that you have the new product order, export the file. And upload it into a Magento custom module. This will change the product order.</p>
+      <Button onClick={this.unparse} color="secondary" size="sm">Save product order</Button>        
   </div>
 )
 
@@ -154,15 +154,15 @@ exportButton = () => (
                         <NavItem>
                         </NavItem>
                         <NavItem>
-                            <NavLink target="_blank" href="https://github.com/dylannirvana/neworder/issues">Register issues here</NavLink>
+                            <NavLink target="_blank" href="https://github.com/perrycipolloni/product-selection-magento-plugin/issues">Register issues here</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
                             How to use
                             </DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem target="_blank" href="https://github.com/dylannirvana/neworder" >
-                                        The GO App is an Agile application that allows you to resequence sections of the product grid order using a visual tool.
+                                <DropdownItem target="_blank" href="https://github.com/perrycipolloni/product-selection-magento-plugin" >
+                                        This plugin allows you to resequence sections of the product order using a visual tool.
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
