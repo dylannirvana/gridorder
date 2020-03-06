@@ -124,7 +124,7 @@ class SortableComponent extends Component {
   importButton = () => (
     <div className="import">
         <h4> Product selection application </h4> 
-        <p className="summary" >This is a Magento plugin. Please upload a properly formatted Custom Export from Magento. And reorder the tiles in the UI.</p>                    
+        <p className="summary" >Upload a CSV. Please upload a properly formatted Custom Export from Magento. And reorder the tiles in the UI.</p>                    
         <Input type="file" onChange={this.parse}  />
     </div>
 )
